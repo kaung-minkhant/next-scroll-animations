@@ -14,9 +14,73 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const lines1 = [
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+  ];
+  const lines2 = [
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+    "cross",
+    "circle",
+  ];
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="lines">
+          <div className="line1">
+            <div className="shapes">
+              {lines1.map((line, index) => (
+                <div key={index} className={line}></div>
+              ))}
+            </div>
+          </div>
+          <div className="line2">
+            <div className="shapes">
+              {lines2.map((line, index) => (
+                <div key={index} className={line}></div>
+              ))}
+            </div>
+          </div>
+          <div className="line3">
+            <div className="shapes">
+              {lines1.map((line, index) => (
+                <div key={index} className={line}></div>
+              ))}
+            </div>
+          </div>
+          <div className="line4">
+            <div className="shapes">
+              {lines2.map((line, index) => (
+                <div key={index} className={line}></div>
+              ))}
+            </div>
+          </div>
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

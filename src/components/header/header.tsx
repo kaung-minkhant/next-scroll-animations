@@ -16,15 +16,15 @@ const abril = Abril_Fatface({
 });
 
 export default function Header() {
-  const imageDivRef = useRef<HTMLDivElement>(null)
-  const {transform, transition} = use3DHover({
+  const imageDivRef = useRef<HTMLDivElement>(null);
+  const { transform, transition } = use3DHover({
     ref: imageDivRef,
     scale: {
       x: 30,
       y: -20,
-      z: 20
-    }
-  })
+      z: 20,
+    },
+  });
   return (
     <HeaderStyled>
       <nav className="nav">
@@ -73,10 +73,13 @@ export default function Header() {
           </div>
         </div>
         <div className="image-content" ref={imageDivRef}>
-          <div className="image" style={{
-            transform: transform, 
-            transition: transition
-          }}>
+          <div
+            className="image"
+            style={{
+              transform: transform,
+              transition: transition,
+            }}
+          >
             <Image
               src="/images/monkey.png"
               alt="monkey"

@@ -28,8 +28,84 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+main {
+  position: relative;
+  z-index: 50;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.lines {
+  top: 0;
+  left: 0;
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.line1,
+.line2,
+.line3,
+.line4 {
+  width: 1px;
+  min-height: 100%;
+  background-color: var(--color-border);
+  position: relative;
+}
+
+.shapes {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  position: relative;
+  /* width: 10px;
+  background-color: var(--color-border); */
+}
+
+.circle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 4px solid var(--color-border);
+  background-color: var(--color-bg);
+  position: relative;
+  left: -7px;
+}
+.cross {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  left: -7px;
+}
+
+.cross::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%) rotate(45deg);
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-border);
+}
+
+.cross::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-border);
 }
