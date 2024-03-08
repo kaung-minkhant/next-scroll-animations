@@ -17,7 +17,7 @@ const abril = Abril_Fatface({
 
 export default function Header() {
   const imageDivRef = useRef<HTMLDivElement>(null);
-  const { transform, transition } = use3DHover({
+  const { transform, transition, isHovering } = use3DHover({
     ref: imageDivRef,
     scale: {
       x: 30,
@@ -73,6 +73,7 @@ export default function Header() {
           </div>
         </div>
         <div className="image-content" ref={imageDivRef}>
+          {!isHovering && <HoverMeStyled>Hover Me</HoverMeStyled>}
           <div
             className="image"
             style={{
@@ -92,6 +93,19 @@ export default function Header() {
     </HeaderStyled>
   );
 }
+
+const HoverMeStyled = styled.div`
+  position: absolute;
+  font-size: 30px;
+  z-index: 51;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-border);
+  opacity: 0.9;
+  padding: 10px 20px;
+  border-radius: 10px;
+`;
 
 const HeaderStyled = styled.header`
   .nav {
@@ -161,6 +175,7 @@ const HeaderStyled = styled.header`
     }
 
     .image-content {
+      position: relative;
       .image {
         border: 1px solid var(--color-border);
         background-color: var(--color-bg);

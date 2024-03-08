@@ -63,5 +63,6 @@ export default function use3DHover({
   return {
     transform,
     transition,
+    isHovering
   };
 }
