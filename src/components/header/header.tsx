@@ -78,7 +78,7 @@ export default function Header() {
             className="image"
             style={{
               transform: transform,
-              transition: transition,
+              // transition: transition,
             }}
           >
             <Image

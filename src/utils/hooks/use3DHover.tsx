@@ -19,12 +19,12 @@ export default function use3DHover({
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseMove = (e: MouseEvent) => {
-    const { offsetWidth, offsetHeight, offsetLeft, offsetTop } =
-      ref.current as HTMLDivElement;
+    const { offsetWidth, offsetHeight } = ref.current as HTMLDivElement;
+    const {top, left} = ( ref.current as HTMLDivElement ).getBoundingClientRect()
     const { clientX, clientY } = e;
-    const x = (clientX - offsetLeft - offsetWidth / 2) / offsetWidth; // normalization
-    const y = (clientY - offsetTop - offsetHeight / 2) / offsetHeight;
-    // console.log({ offsetWidth, offsetHeight, clientX, clientY, x, y });
+    const x = (clientX - left - offsetWidth / 2) / offsetWidth; // normalization
+    const y = (clientY - top - offsetHeight / 2) / offsetHeight;
+    // console.log({ offsetWidth, offsetHeight, top, left, clientX, clientY, x, y });
     setCoord({
       x,
       y,

@@ -6,6 +6,8 @@ import { cards } from "@/utils/cards";
 import Card from "@/components/card/card";
 import FullPage from "@/components/fullpage";
 import TextSection from "@/components/TextSection";
+import Footer from "@/components/footer";
+import ZoomSection from "@/components/ZoomSection";
 
 export default function Home() {
   return (
@@ -41,8 +43,12 @@ export default function Home() {
           </div>
         </SectionLayout>
         <SectionLayout>
+          <ZoomSection />
+        </SectionLayout>
+        <SectionLayout>
           <TextSection />
         </SectionLayout>
+        <Footer />
       </MainStyled>
     </>
   );
