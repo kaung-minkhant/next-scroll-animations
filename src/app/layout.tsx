@@ -48,7 +48,7 @@ export default function RootLayout({
   ];
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={ `${inter.className} relative` }>
         <div className="lines">
           <div className="line1">
             <div className="shapes">
